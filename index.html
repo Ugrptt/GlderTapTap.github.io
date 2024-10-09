@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Oyun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="coin-container">
+            <img src="coin.png" alt="Coin" class="coin">
+            <div class="score" id="score">$GLDER: 0</div>
+        </div>
+
+       
+
+        <div class="timer-container">
+            <div class="timer-bar">
+                <div class="timer-bar-fill" id="timer-bar-fill"></div>
+                <div id="timer-text">10:00</div>
+            </div>
+            <button id="claim-btn" style="display:none;">Ödül Al</button>
+        </div>
+
+        <div class="button-container">
+            <button id="task-btn">
+                <img src="tasks.png" alt="Görevler">
+            </button>
+            <button id="friends-btn">
+                <img src="friends.png" alt="Arkadaşlar">
+            </button>
+            <button id="ranking-btn">
+                <img src="ranking.png" alt="Sıralama">
+            </button>
+        </div>
+    </div>
+
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sosyal Görevler</h2>
+            <ul>
+                <li>
+                    <a href="https://facebook.com" target="_blank" data-points="50" class="task-link">
+                        <img src="facebook.png" alt="Facebook" class="social-icon"> Facebook - <span class="points">50 Puan</span>
+                        <img src="tick.png" alt="Onay" class="checkmark" style="display: none;">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com" target="_blank" data-points="50" class="task-link">
+                        <img src="twitter.png" alt="Twitter" class="social-icon"> Twitter - <span class="points">50 Puan</span>
+                        <img src="tick.png" alt="Onay" class="checkmark" style="display: none;">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com" target="_blank" data-points="50" class="task-link">
+                        <img src="instagram.png" alt="Instagram" class="social-icon"> Instagram - <span class="points">50 Puan</span>
+                        <img src="tick.png" alt="Onay" class="checkmark" style="display: none;">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com" target="_blank" data-points="50" class="task-link">
+                        <img src="linkedin.png" alt="LinkedIn" class="social-icon"> LinkedIn - <span class="points">50 Puan</span>
+                        <img src="tick.png" alt="Onay" class="checkmark" style="display: none;">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" target="_blank" data-points="50" class="task-link">
+                        <img src="youtube.png" alt="YouTube" class="social-icon"> YouTube - <span class="points">50 Puan</span>
+                        <img src="tick.png" alt="Onay" class="checkmark" style="display: none;">
+                    </a>
+                </li>
+            </ul>
+            <button id="back-btn">Geri</button>
+            <div id="confirmation-message" style="display: none;">Puan kazanıldı!</div>
+        </div>
+    </div>
+    
+
+    <div id="friends-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="back-btn-friends">&times;</span>
+            <h2>Arkadaşlar</h2>
+            <p>Telegram Referans Numaranız: <span id="referral-code"></span></p>
+            <p>Bu referans linkini arkadaşlarınızla paylaşın:</p>
+            <input type="text" id="referral-link" readonly>
+            <button id="copy-link">Linki Kopyala</button>
+
+            <h3>Davet Ettiğiniz Arkadaşlar</h3>
+            <ul id="friends-list"></ul>
+
+            <p id="confirmation-message">Arkadaşlarınızı davet edin daha fazla $GLDER kazanın!</p>
+        </div>
+    </div>
+
+    <!-- Sıralama Modalı -->
+    <div id="ranking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Global Sıralama</h2>
+            <ul id="ranking-list"></ul>
+            <button id="back-btn-ranking">Geri</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
